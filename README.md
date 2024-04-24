@@ -32,7 +32,8 @@ This project requires a local Kubernetes cluster so we can test our application 
 2. Run `helm template .` to see the deployment manifest.
 3. Run `helm install <your-app-name> . -f values.yaml` to install the application in your cluster.
 
-## Publishing a chart
+## Publishing a chart to Github Pages
+[This file](.github/workflows/release.yml) has a pipeline that publish the Helm Chart into a Github Page.
 
 ## Useful commands
 ### helm list
