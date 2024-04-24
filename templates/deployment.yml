@@ -6,7 +6,7 @@ metadata:
   name: {{ .Values.deployment.name }}
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: {{ include "deployment.image.name" . }}
+  replicas: {{ include "deployment.replicas" . }}
   selector:
     matchLabels:
       app: {{ .Values.deployment.name }}
