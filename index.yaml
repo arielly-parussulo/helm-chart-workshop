@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  chart-example:
+  - apiVersion: v2
+    created: "2024-04-24T14:54:50.618856224Z"
+    description: just an example chart
+    digest: 2afeacbbd7152d1f9cb17dd0483d0e6ea33ac2a36dd26ad4bc67d5c731345218
+    name: chart-example
+    urls:
+    - https://github.com/arielly-parussulo/helm-chart-workshop/releases/download/chart-example-1.0.0/chart-example-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-04-24T14:54:50.618879968Z"
