@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.deployment.name }}
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: {{ include "deployment.image.name" . }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.name }}
+    spec:
+      containers:
+      - image: {{ include "deployment.image.name" . }}
+        imagePullPolicy: {{ include "deployment.image.pullPolicy" . }}
+        name: main
+        {{- with .Values.deployment.resources }}
+        resources:
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
+      dnsPolicy: ClusterFirst
+      restartPolicy: {{ include "deployment.restartPolicy" . }}
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+

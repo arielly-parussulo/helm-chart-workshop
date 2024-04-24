@@ -1,0 +1,4 @@
+apiVersion: v2
+name: chart-example
+version: 1.0.0
+description: just an example chart
