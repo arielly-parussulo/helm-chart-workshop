@@ -11,12 +11,13 @@ Charts are easy to create, version, share, and publish — so start using Helm a
 This repo provides an example Helm Template that you can modify and test to see how Helm Template works. Its folder structure is the following:
 
 ```
-├── Chart.yaml
-├── README.md
-├── templates
-│   ├── deployment.yml
-│   └── _helpers.tpl
-└── values.yaml
+├── charts
+│   ├── Chart.yaml
+│   ├── templates
+│   │   ├── deployment.yml
+│   │   └── _helpers.tpl
+│   └── values.yaml
+└── README.md
 ```
 
 ### Where:
@@ -33,7 +34,7 @@ This project requires a local Kubernetes cluster so we can test our application 
 3. Run `helm install <your-app-name> . -f values.yaml` to install the application in your cluster.
 
 ## Publishing a chart to Github Pages
-[This file](.github/workflows/release.yml) has a pipeline that publish the Helm Chart into a Github Page.
+[This file](.github/workflows/release.yml) has a pipeline that publishes the Helm Chart into a Github Page.
 
 ## Useful commands
 ### helm list
