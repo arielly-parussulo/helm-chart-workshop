@@ -29,12 +29,48 @@ This repo provides an example Helm Template that you can modify and test to see 
 This project requires a local Kubernetes cluster so we can test our application deployment.
 
 ## How to run this lab
-1. Edit `values.yaml` value with your deployment desired values.
-2. Run `helm template .` to see the deployment manifest.
-3. Run `helm install <your-app-name> . -f values.yaml` to install the application in your cluster.
+### 1. Access charts folder
+
+```
+cd charts/example
+```
+
+### 2. Edit `values.yaml` value with your deployment desired values.
+### 3. Run the template
+You should see the deployment manifests here.
+
+```
+helm template .
+```
+### 4. Install the chart locally
+
+```
+helm install example . -f values.yaml
+```
 
 ## Publishing a chart to Github Pages
-[This file](.github/workflows/release.yml) has a pipeline that publishes the Helm Chart into a Github Page.
+This project uses [chart-releasers-action](https://github.com/helm/chart-releaser-action) action to publish this Helm Chart to Github Pages.
+
+
+For this repo you can use [this url](https://arielly-parussulo.github.io/helm-chart-workshop/).
+
+### Adding a new Helm Chart repo
+
+```
+helm repo add workshop https://arielly-parussulo.github.io/helm-chart-workshop/
+```
+
+### List available charts
+
+```
+helm search repo workshop
+```
+
+### Installing an application from the repo chart
+
+```
+helm install example-3 workshop/chart-example --set deployment.name="example-3"
+```
 
 ## Useful commands
 ### helm list
@@ -42,3 +78,6 @@ List the applications installed in a namespace.
 
 ### helm get values <app>
 Get the values set for the application.
+
+## More about Helm
+https://helm.sh/docs/

@@ -1,5 +1,5 @@
 deployment:
-  name: example-2
+  name: example
   image:
     name: nginx
     tag: latest
